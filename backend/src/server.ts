@@ -1,9 +1,10 @@
 import express from 'express';
+import Routes from './routes';
 
 const app = express();
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'tudocerto' });
-});
+app.use(express.json());
+
+app.use(Routes);
 
 app.listen(3333, () => console.log('server start'));
